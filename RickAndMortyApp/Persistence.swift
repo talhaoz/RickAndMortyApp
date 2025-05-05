@@ -14,18 +14,27 @@ struct PersistenceController {
     static let preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+
+        for i in 1...10 {
+            let character = CharacterEntity(context: viewContext)
+            character.id = Int64(i)
+            character.name = "Karakter \(i)"
+            character.status = (i % 2 == 0) ? "Alive" : "Dead"
+            character.species = (i % 3 == 0) ? "Alien" : "Human"
+            character.gender = (i % 2 == 0) ? "Male" : "Female"
+            character.location = "Lokasyon \(i)"
+            character.image = "https://rickandmortyapi.com/api/character/avatar/\(i).jpeg"
+            character.isFavorite = (i % 3 == 0) // bazıları favori
+            character.descriptionText = "Bu karakter \(i) için açıklamadır."
         }
+
         do {
             try viewContext.save()
         } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            fatalError("Preview save error: \(nsError), \(nsError.userInfo)")
         }
+
         return result
     }()
 

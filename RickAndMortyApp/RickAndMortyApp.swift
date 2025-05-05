@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct RickAndMortyAppApp: App {
+struct RickMortyApp: App {
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
@@ -18,3 +18,4 @@ struct RickAndMortyAppApp: App {
         }
     }
 }
+
