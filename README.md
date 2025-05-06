@@ -1,6 +1,6 @@
 🌀 Rick and Morty SwiftUI App
 
-A modern iOS app built using SwiftUI, Combine, and Core Data, displaying characters from the Rick and Morty API. This project demonstrates real-world architecture practices, including:
+An iOS app built using SwiftUI, Combine, and Core Data, displaying characters from the Rick and Morty API. This project demonstrates real-world architecture practices, including:
 
 - Asynchronous networking
 
@@ -11,6 +11,7 @@ A modern iOS app built using SwiftUI, Combine, and Core Data, displaying charact
 - Filtering and searching
 
 - UI state management (loading, error, empty states)
+
 
 📱 Features
 
@@ -26,9 +27,6 @@ A modern iOS app built using SwiftUI, Combine, and Core Data, displaying charact
 
 ✅ Infinite scroll with API-based pagination
 
-✅ Lightweight toast notifications and UI feedback
-
-✅ SwiftUI Preview support for all screens
 
 🛠 Technologies
 
